@@ -30,8 +30,10 @@ app.set('views', './src/views'); // Seteo de la ubicación de la carpeta "views"
 const logMiddleware = require('./middlewares/userLogs');
 const mainRouter = require('./routes/main');
 
-app.use('/', mainRouter);
+// middleware de apliacion global pero no se indica la global
 app.use(logMiddleware);
+
+app.use('/', mainRouter);
 
 // ************ DON'T TOUCH FROM HERE ************
 // ************ catch 404 and forward to error handler ************
